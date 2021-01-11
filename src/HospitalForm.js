@@ -1,26 +1,27 @@
 import React, { useState, useEffect } from "react";
-import { Form, Input, InputGroup, Button, Label, FormGroup, Row, Col, Container, Table } from "reactstrap";
+import { Form, Input, Button, Label, FormGroup, Row, Col, Table } from "reactstrap";
+
+import "./HospitalForm.css";
 
 const HospitalForm = () => {
         const [weekday, setWeekday] = useState("");
 
         const handleOptionChange = (e)=>{
-            console.log(e.target.value);
             setWeekday(e.target.value);
         }
 
     return (
-        <Container style={{ backgroundColor: "white", paddingTop: "2%", paddingLeft: "10%", paddingRight: "10%" }}>
-            <h5 style={{ textAlign: "left" }}>Select Start Date and Shift Time</h5>
-            <p style={{ textAlign: "left" }}>each row represents a shift</p>
+        <div id="container">
+            <h5>Select Start Date and Shift Time</h5>
+            <p >each row represents a shift</p>
             <br />
             <Form>
                 <FormGroup row>
-                    <Label sm={3} md={3} lg={3} ><strong>Select Start Date</strong></Label>
+                    <Label sm={3} md={3} lg={3} >Select Start Date</Label>
                     <Col sm={9}><Input type="date" required></Input></Col>
                 </FormGroup>
                 <FormGroup row>
-                    <Label sm={3} md={3} lg={3} ><strong>Select Repeat Type</strong></Label>
+                    <Label sm={3} md={3} lg={3} >Select Repeat Type</Label>
                     <Col sm={9}>
                         <Input type="select" required>
                             <option value={'None'} >None</option>
@@ -30,7 +31,7 @@ const HospitalForm = () => {
                     </Col>
                 </FormGroup>
                 <FormGroup row>
-                    <Label sm={3} md={3} lg={3}><strong>Select Shift</strong></Label>
+                    <Label sm={3} md={3} lg={3}>Select Shift</Label>
                     <Col sm={9}>
                         <Input type="select" required>
                             <option value="Morning Shift - 5am to 9am">Morning Shift - 5am to 9am</option>
@@ -39,15 +40,15 @@ const HospitalForm = () => {
                     </Col>
                 </FormGroup>
                 <FormGroup row>
-                    <Label sm={3} md={3} lg={3}><strong>Select Start Time</strong></Label>
+                    <Label sm={3} md={3} lg={3}>Select Start Time</Label>
                     <Col sm={9}> <Input type="time"  required></Input></Col>
                 </FormGroup>
                 <FormGroup row>
-                    <Label sm={3} md={3} lg={3} ><strong>Select End Time</strong></Label>
+                    <Label sm={3} md={3} lg={3} >Select End Time</Label>
                     <Col sm={9}> <Input type="time" required></Input></Col>
                 </FormGroup>
-                <div class="table-responsive" style={{ border: "1px solid black", marginTop: "2%", padding: "2%", position: "relative" }}>
-                    <h5 style={{ textAlign: "left"}}>Please select the day of the week</h5>
+                <div class="table-responsive table-weekday" >
+                    <h5>Please select the day of the week</h5>
                     <br />
                     <Table>
                         <thead>
@@ -74,16 +75,18 @@ const HospitalForm = () => {
                 <Row>
                     <Col sm={3} md={3} lg={3}>
                         <Input type="checkbox"></Input>
-                        <Label><strong>Week Days Only</strong></Label>
+                        <Label>Week Days Only</Label>
                     </Col>
                 </Row>
                 <br />
                 <Row>
                     <Col sm={9} md={9} lg={9} />
-                    <Col>  <Button color="primary" style={{ borderRadius: "15px" }}><strong>ADD+</strong></Button> </Col></Row>
+                    <Col>  
+                        <Button color="primary" style={{ borderRadius: "15px" }}><strong>ADD+</strong></Button> 
+                    </Col>
+                </Row>
             </Form>
-            <br />
-        </Container>
+        </div>
     )
 }
 
