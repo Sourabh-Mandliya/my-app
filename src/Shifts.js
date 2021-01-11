@@ -1,22 +1,30 @@
 import axios from "axios";
 import React,{ useEffect,useState } from "react";
-import {Button }from "reactstrap";
+import { ToastContainer, toast } from 'react-toastify';
 
 const Shifts =()=>{
   const [totalShifts, setTotalShifts] = useState([]);
+  const [message, setMessage] =useState("Fill all required Fields !");
   
   useEffect(()=>{
     callGetApi();
   },[]);
 
+  const notify = (message) => toast.warning(message,{autoClose:3000}); // notify()not call yet
+
   async function callGetApi(){
     axios.get("http://0c4992d4f89b.ngrok.io/form/all/?format=api/fd816dbf5041ae75f53a8216953e3da203a38ac5")
     .then(response =>{ 
-      
       console.log(response);
       setTotalShifts(response.data);
-    }).catch(err => {console.log(err)})
+      
+    }).catch(err => {
+      console.log(err);
+      setMessage(err);
+      notify(err);
+    })
   }
+
 
 return (
     <React.Fragment>
@@ -46,6 +54,7 @@ return (
           </tbody>
         </table>
       </div>
+      <ToastContainer />
     </React.Fragment>
 )}
 

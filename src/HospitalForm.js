@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import Axios from "axios";
 import { Form, Input, Button, Label, FormGroup, Row, Col, Table } from "reactstrap";
+import { ToastContainer, toast } from 'react-toastify';
 
 import "./HospitalForm.css";
 
@@ -8,12 +9,14 @@ const HospitalForm = () => {
         const [weekday, setWeekday] = useState("");
         const [startDate, setStartDate] = useState("");
         const [repeatType, setRepeatType] = useState("");
-        const [shift, setShift] =useState("");
+        const [shift, setShift] =useState("Morning Shift - 5am to 9am");
         const [startTime, setStartTime] =useState("");
         const [endTime , setEndTime] =useState("");
         
         const url = "http://0c4992d4f89b.ngrok.io/form/all/?format=api/fd816dbf5041ae75f53a8216953e3da203a38ac5"; 
    
+        const notify = () => toast.warning("Fill all required Fields !",{autoClose:3000});
+
            async function  callApi(){
            await Axios.post(url,{startDate, repeatType, shift, startTime, endTime, weekday})
            .then(response =>{
@@ -56,7 +59,10 @@ const HospitalForm = () => {
 
         
         const handleData =(e)=>{
-            callApi();
+            if(weekday === "" || startDate === "" || startTime === "" || endTime === "" || shift === "" || repeatType === "")
+                notify();
+            else
+                callApi();
         }
 
     return (
@@ -82,8 +88,7 @@ const HospitalForm = () => {
                 <FormGroup row>
                     <Label sm={3} md={3} lg={3}>Select Shift</Label>
                     <Col sm={9}>
-                        <Input type="select" required onChange={handleShift}>
-                            <option>shifts</option> 
+                        <Input type="select" required onChange={handleShift}> 
                             <option>Morning Shift - 5am to 9am</option>
                         </Input>
                     </Col>
@@ -139,6 +144,7 @@ const HospitalForm = () => {
                     </Col>
                 </Row>
             </Form>
+            <ToastContainer />
         </div>
     )
 }
