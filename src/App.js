@@ -1,14 +1,16 @@
 import React from "react";
-import './App.css';
 
 import ModalForm from "./ModalForm";
+import Shifts from "./Shifts";
 
 function App() {
-  return (
-    <div className="App">
+  return(
+    <React.Fragment>
       <ModalForm />
-    </div>
-  );
+      <br />
+      <Shifts />
+    </React.Fragment>
+  )
 }
 
 export default App;

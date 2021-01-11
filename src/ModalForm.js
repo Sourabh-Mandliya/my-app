@@ -9,15 +9,15 @@ const ModalForm = (props) => {
   const toggle = () => setModal(!modal);
 
   return (
-    <div>
-      <Button color="danger" onClick={toggle}>HospitalForm</Button>
+    <React.Fragment>
+      <Button color="danger" onClick={toggle}>Add Shift</Button>
       <Modal isOpen={modal} toggle={toggle} size="lg" >
-        <ModalHeader toggle={toggle}>HospitalForm</ModalHeader>
+        <ModalHeader toggle={toggle}>Shift Form</ModalHeader>
         <ModalBody>
         <HospitalForm />  
         </ModalBody>
       </Modal>
-    </div>
+    </React.Fragment>
   );
 }
 
