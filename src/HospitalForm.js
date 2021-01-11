@@ -2,6 +2,13 @@ import React, { useState, useEffect } from "react";
 import { Form, Input, InputGroup, Button, Label, FormGroup, Row, Col, Container, Table } from "reactstrap";
 
 const HospitalForm = () => {
+        const [weekday, setWeekday] = useState("");
+
+        const handleOptionChange = (e)=>{
+            console.log(e.target.value);
+            setWeekday(e.target.value);
+        }
+
     return (
         <Container style={{ backgroundColor: "white", paddingTop: "2%", paddingLeft: "10%", paddingRight: "10%" }}>
             <h5 style={{ textAlign: "left" }}>Select Start Date and Shift Time</h5>
@@ -53,13 +60,13 @@ const HospitalForm = () => {
                             <th>SUN</th>
                         </thead>
                         <tbody>
-                            <td ><Input type="radio" name="day"></Input></td>
-                            <td><Input type="radio" name="day"></Input></td>
-                            <td><Input type="radio" name="day"></Input></td>
-                            <td><Input type="radio" name="day"></Input></td>
-                            <td><Input type="radio" name="day"></Input></td>
-                            <td><Input type="radio" name="day"></Input></td>
-                            <td><Input type="radio" name="day"></Input></td>
+                            <td ><Input type="radio" value="MON" onChange={handleOptionChange} checked={weekday==="MON"}></Input></td>
+                            <td><Input type="radio" value="TUE" onChange={handleOptionChange} checked={weekday==='TUE'}></Input></td>
+                            <td><Input type="radio" value="WED" onChange={handleOptionChange} checked={weekday==="WED"}></Input></td>
+                            <td><Input type="radio" value="THU" onChange={handleOptionChange} checked={weekday==="THU"}></Input></td>
+                            <td><Input type="radio" value="FRI" onChange={handleOptionChange} checked={weekday==="FRI"}></Input></td>
+                            <td><Input type="radio" value="SAT" onChange={handleOptionChange} checked={weekday==="SAT"}></Input></td>
+                            <td><Input type="radio" value="SUN" onChange={handleOptionChange} checked={weekday==="SUN"}></Input></td>
                         </tbody>
                     </Table>
                 </div>
