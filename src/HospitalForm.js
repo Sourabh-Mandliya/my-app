@@ -40,7 +40,7 @@ const HospitalForm = () => {
                     <Col sm={9}> <Input type="time" required></Input></Col>
                 </FormGroup>
                 <div class="table-responsive" style={{ border: "1px solid black", marginTop: "2%", padding: "2%", position: "relative" }}>
-                    <h5 style={{ textAlign: "left", fontSize: "2vw" }}>Please select the day of the week</h5>
+                    <h5 style={{ textAlign: "left"}}>Please select the day of the week</h5>
                     <br />
                     <Table>
                         <thead>
