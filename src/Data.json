@@ -1,0 +1,114 @@
+[
+	{
+		"startDate":"12-01-2020",
+		"repeatType":"Daily",
+		"shift":"Morning Shift - 5am to 9am",
+		"startTime":"05:50",
+		"endTime":"08:45",
+		"weekday":"SUN"
+	},
+	{
+		"startDate":"07-01-2020",
+		"repeatType":"Weekly",
+		"shift":"Morning Shift - 5am to 9am",
+		"startTime":"05:50",
+		"endTime":"08:45",
+		"weekday":"WED"
+	},
+	{
+		"startDate":"13-01-2020",
+		"repeatType":"Daily",
+		"shift":"Morning Shift - 5am to 9am",
+		"startTime":"05:50",
+		"endTime":"08:45",
+		"weekday":"THU"
+	},
+	{
+		"startDate":"01-01-2020",
+		"repeatType":"Daily",
+		"shift":"Morning Shift - 5am to 9am",
+		"startTime":"05:50",
+		"endTime":"08:45",
+		"weekday":"FRI"
+	},
+	{
+		"startDate":"02-01-2020",
+		"repeatType":"Daily",
+		"shift":"Morning Shift - 5am to 9am",
+		"startTime":"05:50",
+		"endTime":"08:45",
+		"weekday":"SAT"
+	},
+	{
+		"startDate":"10-01-2020",
+		"repeatType":"Daily",
+		"shift":"Morning Shift - 5am to 9am",
+		"startTime":"05:50",
+		"endTime":"08:45",
+		"weekday":"MON"
+	},
+	{
+		"startDate":"10-01-2020",
+		"repeatType":"Daily",
+		"shift":"Morning Shift - 5am to 9am",
+		"startTime":"05:50",
+		"endTime":"08:45",
+		"weekday":"SUN"
+	},
+	{
+		"startDate":"10-01-2020",
+		"repeatType":"Daily",
+		"shift":"Morning Shift - 5am to 9am",
+		"startTime":"05:50",
+		"endTime":"08:45",
+		"weekday":"SAT"
+	},
+	{
+		"startDate":"06-01-2020",
+		"repeatType":"Daily",
+		"shift":"Morning Shift - 5am to 9am",
+		"startTime":"05:50",
+		"endTime":"08:45",
+		"weekday":"FRI"
+	},
+	{
+		"startDate":"08-01-2020",
+		"repeatType":"Daily",
+		"shift":"Morning Shift - 5am to 9am",
+		"startTime":"05:50",
+		"endTime":"08:45",
+		"weekday":"SUN"
+	},
+	{
+		"startDate":"09-01-2020",
+		"repeatType":"Daily",
+		"shift":"Morning Shift - 5am to 9am",
+		"startTime":"05:50",
+		"endTime":"08:45",
+		"weekday":"MON"
+	},
+	{
+		"startDate":"12-01-2020",
+		"repeatType":"Daily",
+		"shift":"Morning Shift - 5am to 9am",
+		"startTime":"05:50",
+		"endTime":"08:45",
+		"weekday":"TUE"
+	},
+	{
+		"startDate":"10-01-2020",
+		"repeatType":"Daily",
+		"shift":"Morning Shift - 5am to 9am",
+		"startTime":"05:50",
+		"endTime":"08:45",
+		"weekday":"WED"
+	},
+	{
+		"startDate":"10-01-2020",
+		"repeatType":"Daily",
+		"shift":"Morning Shift - 5am to 9am",
+		"startTime":"05:50",
+		"endTime":"08:45",
+		"weekday":"THU"
+	}
+]

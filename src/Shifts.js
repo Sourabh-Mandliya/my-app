@@ -1,6 +1,7 @@
 import axios from "axios";
 import React,{ useEffect,useState } from "react";
 import { ToastContainer, toast } from 'react-toastify';
+import Data from "./Data.json";
 
 const Shifts =()=>{
   const [totalShifts, setTotalShifts] = useState([]);
@@ -24,33 +25,37 @@ const Shifts =()=>{
       notify(err);
     })
   }
-
-
+console.log(Data);
 return (
     <React.Fragment>
       <h3 style={{textAlign:"center"}}>Shifts Records</h3>
       <div class="container" style={{marginTop:"2%"}}>
         <table class="table">
-          <thead>
+          <thead class="thead-dark">
             <tr>
               <th scope="col">#</th>
-              <th scope="col">Weekday</th>
-              <th scope="col">Shift</th>
-              <th scope="col">Repeat-Type</th>
-              <th scope="col">Start-Date</th>
-              <th scope="col">Start-Time</th>
-              <th scope="col">End-Time</th>
+              <th scope="col" style={{textAlign:"center"}}>StartDate</th>
+              <th scope="col" style={{textAlign:"center"}}>RepeatType</th>
+              <th scope="col" style={{textAlign:"center"}}>Shift</th>
+              <th scope="col" style={{textAlign:"center"}}>StartTime</th>
+              <th scope="col" style={{textAlign:"center"}}>EndTime</th>
+              <th scope="col" style={{textAlign:"center"}}>Weekday</th>
             </tr>
           </thead>
           <tbody>
-            <tr>
-              <th scope="row">1</th>
-              <td>Mark</td>
-              <td>Otto</td>
-              <td>@mdo</td>
-              <td>Otto</td>
-              <td>@mdo</td>
-            </tr>
+            {
+              Data.map((result,index)=>(
+                <tr>
+                  <th scope="row">{index+1}</th>
+                  <td>{result.startDate}</td>
+                  <td>{result.repeatType}</td>
+                  <td>{result.shift}</td>
+                  <td>{result.startTime}</td>
+                  <td>{result.endTime}</td>
+                  <td>{result.weekday}</td>
+                </tr>
+              ))
+            }
           </tbody>
         </table>
       </div>
